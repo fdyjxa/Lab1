@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>Lab1.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">TestSimplify (2016-11-11 20:11:58)</a> &gt; <a href="../../index.html" class="el_group">Lab1</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">Lab1.java</span></div><h1>Lab1.java</h1><pre class="source lang-java linenums">import java.util.Scanner;
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>Lab1.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">TestExpression (2016-11-11 20:55:02)</a> &gt; <a href="../../index.html" class="el_group">Lab1</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">Lab1.java</span></div><h1>Lab1.java</h1><pre class="source lang-java linenums">import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -7,89 +7,89 @@ import java.util.regex.Pattern;
 <span class="fc" id="L7">	private static String command = null; // 指令</span>
 	// 处理表达式
 	static int expression(String str) {
-<span class="nc" id="L10">		final Pattern p1 = Pattern.compile(&quot;((^[1-9]\\d*)|[a-zA-Z])([\\*\\+]([a-zA-Z]|[1-9]\\d*))*&quot;);</span>
-<span class="nc" id="L11">		final Pattern p2 = Pattern.compile(&quot;^!simplify(\\s[a-zA-Z]=(^[1-9]\\d*$))*&quot;);</span>
-<span class="nc" id="L12">		final Pattern p3 = Pattern.compile(&quot;^!d/d\\s[a-zA-z]$&quot;);</span>
-<span class="nc" id="L13">		Matcher m1 = p1.matcher(str);</span>
-<span class="nc" id="L14">		Matcher m2 = p2.matcher(str);</span>
-<span class="nc" id="L15">		Matcher m3 = p3.matcher(str);</span>
-<span class="nc bnc" id="L16" title="All 2 branches missed.">		if (m1.matches()) {</span>
-<span class="nc" id="L17">			return 1;</span>
+<span class="fc" id="L10">		final Pattern p1 = Pattern.compile(&quot;((^[1-9]\\d*)|[a-zA-Z])([\\*\\+]([a-zA-Z]|[1-9]\\d*))*&quot;);</span>
+<span class="fc" id="L11">		final Pattern p2 = Pattern.compile(&quot;^!simplify(\\s[a-zA-Z]=(^[1-9]\\d*$))*&quot;);</span>
+<span class="fc" id="L12">		final Pattern p3 = Pattern.compile(&quot;^!d/d\\s[a-zA-z]$&quot;);</span>
+<span class="fc" id="L13">		Matcher m1 = p1.matcher(str);</span>
+<span class="fc" id="L14">		Matcher m2 = p2.matcher(str);</span>
+<span class="fc" id="L15">		Matcher m3 = p3.matcher(str);</span>
+<span class="fc bfc" id="L16" title="All 2 branches covered.">		if (m1.matches()) {</span>
+<span class="fc" id="L17">			return 1;</span>
 		}
-<span class="nc bnc" id="L19" title="All 2 branches missed.">		if (m2.find()) {</span>
-<span class="nc" id="L20">			command = str.substring(9);</span>
-<span class="nc" id="L21">			command = command.trim();</span>
-<span class="nc" id="L22">			return 2;</span>
+<span class="fc bfc" id="L19" title="All 2 branches covered.">		if (m2.find()) {</span>
+<span class="fc" id="L20">			command = str.substring(9);</span>
+<span class="fc" id="L21">			command = command.trim();</span>
+<span class="fc" id="L22">			return 2;</span>
 		}
-<span class="nc bnc" id="L24" title="All 2 branches missed.">		if (m3.find()) {</span>
-<span class="nc" id="L25">			command = str.substring(5);</span>
-<span class="nc" id="L26">			return 3;</span>
+<span class="fc bfc" id="L24" title="All 2 branches covered.">		if (m3.find()) {</span>
+<span class="fc" id="L25">			command = str.substring(5);</span>
+<span class="fc" id="L26">			return 3;</span>
 		}
-<span class="nc" id="L28">		return 0;</span>
+<span class="fc" id="L28">		return 0;</span>
 	}
 
 	// 带入数值化简
 	static String simplify() {
 		// 用数值替换变量
-<span class="fc" id="L34">		String[] values = command.split(&quot;\\s&quot;);</span>
+<span class="nc" id="L34">		String[] values = command.split(&quot;\\s&quot;);</span>
 		Pattern p1, p2;
 		Matcher m1, m2;
-<span class="fc" id="L37">		String var = null, num = null, result = null;</span>
-<span class="fc bfc" id="L38" title="All 2 branches covered.">		if (command.isEmpty()) {</span>
-<span class="fc" id="L39">			return null;</span>
+<span class="nc" id="L37">		String var = null, num = null, result = null;</span>
+<span class="nc bnc" id="L38" title="All 2 branches missed.">		if (command.isEmpty()) {</span>
+<span class="nc" id="L39">			return null;</span>
 		}
-<span class="fc bfc" id="L41" title="All 2 branches covered.">		for (int i = 0; i &lt; values.length; i++) {</span>
-<span class="fc" id="L42">			p1 = Pattern.compile(&quot;[a-zA-Z]&quot;);</span>
-<span class="fc" id="L43">			m1 = p1.matcher(values[i]);</span>
-<span class="pc bpc" id="L44" title="1 of 2 branches missed.">			if (m1.find()) {</span>
-<span class="fc" id="L45">				var = m1.group();</span>
+<span class="nc bnc" id="L41" title="All 2 branches missed.">		for (int i = 0; i &lt; values.length; i++) {</span>
+<span class="nc" id="L42">			p1 = Pattern.compile(&quot;[a-zA-Z]&quot;);</span>
+<span class="nc" id="L43">			m1 = p1.matcher(values[i]);</span>
+<span class="nc bnc" id="L44" title="All 2 branches missed.">			if (m1.find()) {</span>
+<span class="nc" id="L45">				var = m1.group();</span>
 			}
-<span class="fc" id="L47">			p2 = Pattern.compile(&quot;[1-9]\\d*&quot;);</span>
-<span class="fc" id="L48">			m2 = p2.matcher(values[i]);</span>
-<span class="pc bpc" id="L49" title="1 of 2 branches missed.">			if (m2.find()) {</span>
-<span class="fc" id="L50">				num = m2.group();</span>
+<span class="nc" id="L47">			p2 = Pattern.compile(&quot;[1-9]\\d*&quot;);</span>
+<span class="nc" id="L48">			m2 = p2.matcher(values[i]);</span>
+<span class="nc bnc" id="L49" title="All 2 branches missed.">			if (m2.find()) {</span>
+<span class="nc" id="L50">				num = m2.group();</span>
 			}
-<span class="fc bfc" id="L52" title="All 2 branches covered.">			if (result == null) {</span>
-<span class="fc" id="L53">				result = exp.replace(var, num);</span>
-<span class="fc" id="L54">			} else {</span>
-<span class="fc" id="L55">				result = result.replace(var, num);</span>
+<span class="nc bnc" id="L52" title="All 2 branches missed.">			if (result == null) {</span>
+<span class="nc" id="L53">				result = exp.replace(var, num);</span>
+<span class="nc" id="L54">			} else {</span>
+<span class="nc" id="L55">				result = result.replace(var, num);</span>
 			}
 		}
 		// 计算常数项和系数
-<span class="fc" id="L59">		String[] terms = result.split(&quot;\\+&quot;);</span>
-<span class="fc" id="L60">		result = &quot;&quot;;</span>
-<span class="fc" id="L61">		int sum = 0;</span>
-<span class="fc bfc" id="L62" title="All 2 branches covered.">		for (int i = 0; i &lt; terms.length; i++) {</span>
-<span class="fc" id="L63">			p2 = Pattern.compile(&quot;[1-9]\\d*&quot;);</span>
-<span class="fc" id="L64">			m2 = p2.matcher(terms[i]);</span>
-<span class="fc" id="L65">			int mult = 1;</span>
-<span class="fc bfc" id="L66" title="All 2 branches covered.">			while (m2.find()) {</span>
-<span class="fc" id="L67">				mult = mult * Integer.parseInt(m2.group());</span>
+<span class="nc" id="L59">		String[] terms = result.split(&quot;\\+&quot;);</span>
+<span class="nc" id="L60">		result = &quot;&quot;;</span>
+<span class="nc" id="L61">		int sum = 0;</span>
+<span class="nc bnc" id="L62" title="All 2 branches missed.">		for (int i = 0; i &lt; terms.length; i++) {</span>
+<span class="nc" id="L63">			p2 = Pattern.compile(&quot;[1-9]\\d*&quot;);</span>
+<span class="nc" id="L64">			m2 = p2.matcher(terms[i]);</span>
+<span class="nc" id="L65">			int mult = 1;</span>
+<span class="nc bnc" id="L66" title="All 2 branches missed.">			while (m2.find()) {</span>
+<span class="nc" id="L67">				mult = mult * Integer.parseInt(m2.group());</span>
 			}
-<span class="fc" id="L69">			p1 = Pattern.compile(&quot;[a-zA-Z]&quot;);</span>
-<span class="fc" id="L70">			m1 = p1.matcher(terms[i]);</span>
-<span class="fc" id="L71">			String temp = String.valueOf(mult);</span>
-<span class="fc bfc" id="L72" title="All 2 branches covered.">			while (m1.find()) {</span>
-<span class="fc" id="L73">				temp = temp + &quot;*&quot; + m1.group();</span>
+<span class="nc" id="L69">			p1 = Pattern.compile(&quot;[a-zA-Z]&quot;);</span>
+<span class="nc" id="L70">			m1 = p1.matcher(terms[i]);</span>
+<span class="nc" id="L71">			String temp = String.valueOf(mult);</span>
+<span class="nc bnc" id="L72" title="All 2 branches missed.">			while (m1.find()) {</span>
+<span class="nc" id="L73">				temp = temp + &quot;*&quot; + m1.group();</span>
 			}
-<span class="pc bpc" id="L75" title="1 of 2 branches missed.">			if (mult == 1) {</span>
+<span class="nc bnc" id="L75" title="All 2 branches missed.">			if (mult == 1) {</span>
 <span class="nc" id="L76">				temp = temp.substring(2);</span>
 			}
-<span class="fc" id="L78">			terms[i] = temp;</span>
-<span class="fc" id="L79">			m2 = p2.matcher(terms[i]);</span>
+<span class="nc" id="L78">			terms[i] = temp;</span>
+<span class="nc" id="L79">			m2 = p2.matcher(terms[i]);</span>
 
-<span class="fc bfc" id="L81" title="All 2 branches covered.">			if (m2.matches()) {</span>
-<span class="fc" id="L82">				sum = sum + Integer.parseInt(terms[i]);</span>
-<span class="fc" id="L83">			} else {</span>
-<span class="fc" id="L84">				result = result + terms[i] + &quot;+&quot;;</span>
+<span class="nc bnc" id="L81" title="All 2 branches missed.">			if (m2.matches()) {</span>
+<span class="nc" id="L82">				sum = sum + Integer.parseInt(terms[i]);</span>
+<span class="nc" id="L83">			} else {</span>
+<span class="nc" id="L84">				result = result + terms[i] + &quot;+&quot;;</span>
 			}
 		}
-<span class="fc bfc" id="L87" title="All 2 branches covered.">		if (sum != 0) {</span>
-<span class="fc" id="L88">			result = result + String.valueOf(sum);</span>
-<span class="fc" id="L89">		} else {</span>
-<span class="fc" id="L90">			result = result.substring(0, result.length() - 1);</span>
+<span class="nc bnc" id="L87" title="All 2 branches missed.">		if (sum != 0) {</span>
+<span class="nc" id="L88">			result = result + String.valueOf(sum);</span>
+<span class="nc" id="L89">		} else {</span>
+<span class="nc" id="L90">			result = result.substring(0, result.length() - 1);</span>
 		}
-<span class="fc" id="L92">		return result;</span>
+<span class="nc" id="L92">		return result;</span>
 
 	}
 
@@ -191,10 +191,10 @@ import java.util.regex.Pattern;
 	}
 	//测试使用
 	public void setExp(String exp) {
-<span class="fc" id="L194">		this.exp = exp;</span>
-<span class="fc" id="L195">	}</span>
+<span class="nc" id="L194">		this.exp = exp;</span>
+<span class="nc" id="L195">	}</span>
 	public void setCommand(String command) {
-<span class="fc" id="L197">		this.command = command;</span>
-<span class="fc" id="L198">	}</span>
+<span class="nc" id="L197">		this.command = command;</span>
+<span class="nc" id="L198">	}</span>
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>TestSimplify (2016-11-11 20:11:58)</div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>TestExpression (2016-11-11 20:55:02)</div></body></html>
