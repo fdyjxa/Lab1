@@ -189,4 +189,11 @@ public class Lab1 {
 			}
 		}
 	}
+	//≤‚ ‘ π”√
+	public void setExp(String exp) {
+		this.exp = exp;
+	}
+	public void setCommand(String command) {
+		this.command = command;
+	}
 }
